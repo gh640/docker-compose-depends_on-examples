@@ -1,0 +1,11 @@
+# service_b depends on service_a.
+
+version: "3"
+
+services:
+  service_a:
+    image: busybox
+  service_b:
+    image: busybox
+    depends_on:
+      - service_a

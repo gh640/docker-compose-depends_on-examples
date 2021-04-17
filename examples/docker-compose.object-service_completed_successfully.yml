@@ -1,0 +1,14 @@
+# service_b depends on service_a.
+# service_b starts after service_a ends with status 0.
+
+version: "3"
+
+services:
+  service_a:
+    image: busybox
+    command: ["sh", "-c", "exit 0"]
+  service_b:
+    image: busybox
+    depends_on:
+      service_a:
+        condition: service_completed_successfully

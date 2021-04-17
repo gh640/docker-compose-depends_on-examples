@@ -1,0 +1,34 @@
+# service_b depends on service_a.
+# The first reqeust by service_b to service_a fails.
+
+version: "3"
+
+services:
+  # service_a: Sleep for 5 seconds and start web server.
+  service_a:
+    image: busybox
+    command:
+      - sh
+      - -c
+      - |
+        set -ex
+        sleep 5
+        echo 'Hi' > /var/www/index.html
+        httpd -f -p 80 -h /var/www
+    ports:
+      - "80:80"
+  # service_b: Make HTTP requests to service_a.
+  # The first attempt fails as the web server hasn't started yet.
+  service_b:
+    image: busybox
+    command:
+      - sh
+      - -c
+      - |
+        while true; do
+          wget -O- -q http://service_a:80
+          sleep 5
+        done
+    depends_on:
+      service_a:
+        condition: service_started
