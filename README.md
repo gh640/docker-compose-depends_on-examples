@@ -49,3 +49,7 @@ depends_on:
 
 - `docker-compose.object-service_completed_successfully-failure.yml`
 - `docker-compose.object-service_completed_successfully.yml`
+
+## Links
+
+- Japanese post: [Docker Compose の depends_on の使い方まとめ | gotohayato.com](https://gotohayato.com/content/533/)
