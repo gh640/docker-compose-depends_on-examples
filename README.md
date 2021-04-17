@@ -52,4 +52,7 @@ depends_on:
 
 ## Links
 
+- [`compose-spec/spec.md` at master · `compose-spec/compose-spec` · GitHub](https://github.com/compose-spec/compose-spec/blob/master/spec.md#depends_on)
+- [`depends_on` | Compose file version 3 reference | Docker Documentation](https://docs.docker.com/compose/compose-file/compose-file-v3/#depends_on)
+- [`depends_on` | Compose file version 2 reference | Docker Documentation](https://docs.docker.com/compose/compose-file/compose-file-v2/#depends_on)
 - Japanese post: [Docker Compose の depends_on の使い方まとめ | gotohayato.com](https://gotohayato.com/content/533/)
